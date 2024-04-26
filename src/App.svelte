@@ -14,9 +14,8 @@
   }
 
    onMount(() => {
-    // Check if the window width is less than 1080px (desktop width)
+   
     if (window.innerWidth < 1080) {
-      // If it's a mobile screen, change the background image
       backgroundImage = '/background-pattern-mobile.svg';
     }
   });
@@ -121,8 +120,8 @@
 
 <body>
 	
-	<div class="image_background" style="background-image: url({backgroundImage});">
-  		<img src="/background-pattern-desktop.svg" alt="background_image"/>
+	<div style="background-image: url({backgroundImage});">
+  		<img src={backgroundImage} alt="background_image"/>
 	</div>
 
 	<div class="main-container">

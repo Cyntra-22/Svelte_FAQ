@@ -13,7 +13,79 @@
 </script>
 
 <style>
-	
+	:root{
+		--bg_color: rgb(255, 239, 249)
+	}
+
+	:global(body){
+		padding: 0;
+		margin: 0;
+		background-color: var(--bg_color);   	 
+	}
+
+	.image_background {
+    	width: 100%;
+		
+    
+}
+
+
+
+	.main-container{
+		
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		background-color: rgb(225, 161, 208);
+		padding: 20px;
+		border-radius: 10px;
+		width: 50%;
+		
+	}
+
+	button{
+		background: none;
+		border: none;
+	}
+
+	.faq-header{
+		display: flex;
+	}
+	h1{
+		margin: 0;
+		padding: 0;
+	}
+
+	.alignment{
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.faq-container{
+		margin-top: 25px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid rgb(169, 165, 165);
+	}
+
+	.faq-header img{
+		width: 40px;
+		height: 40px;
+		padding-right: 10px;
+	}
+
+	.question-style{
+		font-weight: bold;
+		font-family:Georgia, 'Times New Roman', Times, serif;
+		font-size: 15px;
+	}
+
+	@media (min-width: 1080px){
+		.main-container{
+			width: 30%;
+		}
+	}
 </style>
 
 <body>

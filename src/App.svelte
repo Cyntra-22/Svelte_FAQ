@@ -1,15 +1,25 @@
 <script>
+	import { onMount } from 'svelte';
 	let faqItems = [
     { question: "What is Frontend Mentor, and how will it help me?", answer: "Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.", isOpen: false },
     { question: "Is Frontend Mentor free?", answer: "Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels. ", isOpen: false },
     { question: "Can I use Frontend Mentor projects in my portfolio?", answer: "Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers! ", isOpen: false },
 	{ question: " How can I get help if I'm stuck on a Frontend Mentor challenge?", answer: "The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members.", isOpen: false },
   ];
-  const src = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wallpaperflare.com%2Fsearch%3Fwallpaper%3Dpurple%2Blandscape&psig=AOvVaw2j8HnSoQQYbpDXdW2cVUcV&ust=1714155944777000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLjG-9P-3YUDFQAAAAAdAAAAABAE"
+  
+  let backgroundImage = '/background-pattern-desktop.svg';
 
   function toggleAnswer(index) {
     faqItems[index].isOpen = !faqItems[index].isOpen;
   }
+
+   onMount(() => {
+    // Check if the window width is less than 1080px (desktop width)
+    if (window.innerWidth < 1080) {
+      // If it's a mobile screen, change the background image
+      backgroundImage = '/background-pattern-mobile.svg';
+    }
+  });
 </script>
 
 <style>
@@ -17,13 +27,16 @@
 		--bg_color: hsl(275, 100%, 97%);
 		--text-colorAns: hsl(292, 16%, 49%);
 		--text-colorQ: hsl(292, 42%, 14%);
+		--font:'Work Sans', sans-serif;
 	}
 
 	:global(body){
 		padding: 0;
 		margin: 0;
-		background-color: var(--bg_color);   	 
+		background-color: var(--bg_color);
+		font-family: var(--font);   	 
 	}
+
 
 	.main-container{
 		
@@ -47,10 +60,12 @@
 	.faq-header{
 		display: flex;
 	}
+
 	h1{
 		margin: 0;
 		padding: 0;
-		font-size: 35px;
+		font-size: 38px;
+		
 	}
 
 	.alignment{
@@ -76,10 +91,12 @@
 		padding-right: 10px;
 	}
 
+
+
 	.question-style{
+		
 		font-weight: bold;
-		font-family:Georgia, 'Times New Roman', Times, serif;
-		font-size: 15px;
+		font-size: 16px;
 		color: black;	
 	}
 
@@ -90,24 +107,23 @@
 
 	.answer-style{
 		color: var(--text-colorAns);
+		font-size: 16px;
 	}
-
-	
 
 	@media (min-width: 1080px){
 		.main-container{
 			width: 30%;
-		}
+		}	
+
 	}
+	
 </style>
 
 <body>
 	
-	<!--<div class="image_background">
-		<img src="/background-pattern-desktop" alt="lajfl"/>
+	<div class="image_background" style="background-image: url({backgroundImage});">
+  		<img src="/background-pattern-desktop.svg" alt="background_image"/>
 	</div>
-
-	-->
 
 	<div class="main-container">
 		<div class="faq-header">

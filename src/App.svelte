@@ -14,7 +14,9 @@
 
 <style>
 	:root{
-		--bg_color: rgb(255, 239, 249)
+		--bg_color: hsl(275, 100%, 97%);
+		--text-colorAns: hsl(292, 16%, 49%);
+		--text-colorQ: hsl(292, 42%, 14%);
 	}
 
 	:global(body){
@@ -23,21 +25,13 @@
 		background-color: var(--bg_color);   	 
 	}
 
-	.image_background {
-    	width: 100%;
-		
-    
-}
-
-
-
 	.main-container{
 		
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%,-50%);
-		background-color: rgb(225, 161, 208);
+		background-color: hsl(0, 0%, 100%);
 		padding: 20px;
 		border-radius: 10px;
 		width: 50%;
@@ -47,6 +41,7 @@
 	button{
 		background: none;
 		border: none;
+		cursor: pointer;
 	}
 
 	.faq-header{
@@ -55,16 +50,22 @@
 	h1{
 		margin: 0;
 		padding: 0;
+		font-size: 35px;
 	}
 
 	.alignment{
 		width: 100%;
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 	}
 
+	.icon-style {
+		padding-top: 25px;
+	}
+
 	.faq-container{
-		margin-top: 25px;
+	
 		padding-bottom: 10px;
 		border-bottom: 1px solid rgb(169, 165, 165);
 	}
@@ -79,7 +80,19 @@
 		font-weight: bold;
 		font-family:Georgia, 'Times New Roman', Times, serif;
 		font-size: 15px;
+		color: black;	
 	}
+
+	.question-style:hover{
+		color: var(--text-colorAns);
+		
+	}
+
+	.answer-style{
+		color: var(--text-colorAns);
+	}
+
+	
 
 	@media (min-width: 1080px){
 		.main-container{
@@ -89,13 +102,14 @@
 </style>
 
 <body>
+	<!--
 	<div class="image_background">
 		<img src="https://img.freepik.com/free-vector/matrix-style-binary-code-digital-falling-numbers-blue-background_1017-37387.jpg" alt=""/>
-	</div>
+	</div>-->
 
 	<div class="main-container">
 		<div class="faq-header">
-			<img src = "images/logo.png" alt="faq-title"/>
+			<img src = "/icon-star.svg" alt="faq-title"/>
 			<h1>FAQs</h1>
 		</div>
 
@@ -107,19 +121,19 @@
 							<div class="question-style">
 								<span>{faqItem.question}</span>
 							</div>
-							<div>
-								<button on:click={() => toggleAnswer(index)}>
+							<div >
+								<button class="icon-style" on:click={() => toggleAnswer(index)}>
 								{#if faqItem.isOpen}					
-									<span>➖</span>
+									<img src = "/icon-minus.svg" alt="minus icon"/>
 								{:else}
-									<span>➕</span>
+									<img src = "/icon-plus.svg" alt="minus icon"/>
 								{/if}
 								</button>
 							</div>
 						</div>
 					
 						{#if faqItem.isOpen}
-						<p>{faqItem.answer}</p>
+						<p class="answer-style">{faqItem.answer}</p>
 						{/if}
 					</div>
 				</div>

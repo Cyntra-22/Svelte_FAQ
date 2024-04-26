@@ -102,10 +102,12 @@
 </style>
 
 <body>
-	<!--
-	<div class="image_background">
-		<img src="https://img.freepik.com/free-vector/matrix-style-binary-code-digital-falling-numbers-blue-background_1017-37387.jpg" alt=""/>
-	</div>-->
+	
+	<!--<div class="image_background">
+		<img src="/background-pattern-desktop" alt="lajfl"/>
+	</div>
+
+	-->
 
 	<div class="main-container">
 		<div class="faq-header">

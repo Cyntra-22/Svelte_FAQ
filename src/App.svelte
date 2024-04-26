@@ -127,6 +127,10 @@
 		.answer-style{
 			font-size: 13px;
 		}
+
+		.icon-style {
+		padding-top: 15px;
+	}
 	}
 	
 </style>

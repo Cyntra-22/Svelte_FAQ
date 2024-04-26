@@ -116,6 +116,18 @@
 		}	
 
 	}
+
+	@media (max-width: 500px){
+		h1{
+			font-size: 29px;
+		}
+		.question-style{
+			font-size: 13px;
+		}
+		.answer-style{
+			font-size: 13px;
+		}
+	}
 	
 </style>
 

@@ -47,6 +47,7 @@
 		padding: 20px;
 		border-radius: 10px;
 		width: 50%;
+		box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
 		
 	}
 

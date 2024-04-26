@@ -131,6 +131,9 @@
 		.icon-style {
 		padding-top: 15px;
 	}
+	.main-container{
+		width: 65%;
+	}
 	}
 	
 </style>

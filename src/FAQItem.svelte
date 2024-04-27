@@ -10,8 +10,6 @@
 
 <style>
   
-
-
   button {
     background: none;
     border: none;
@@ -39,10 +37,24 @@
     color: var(--text-colorAns);
     font-size: 16px;
   }
+
+  @media (max-width: 768px){
+		.question-style{
+			font-size: 13px;
+		}
+		.answer-style{
+			font-size: 13px;
+		}
+
+		.icon-style {
+		padding-top: 15px;
+	}
+}
 </style>
 
 
-  <div class="alignment">
+
+<div class="alignment"> 
     <div class="question-style" >
       <span>{question}</span>
     </div>
@@ -54,9 +66,14 @@
           <img src="/icon-plus.svg" alt="plus icon"/>
         {/if}
       </button>
+    </div> 
     </div>
-  
-  {#if isOpen}
-    <p class="answer-style">{answer}</p>
-  {/if}
+<div class="answer-style">
+    {#if isOpen}
+        <p >{answer}</p>
+    {/if}
 </div>
+        
+   
+
+

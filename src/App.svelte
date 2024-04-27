@@ -249,6 +249,7 @@
   h1 {
     margin: 0;
     padding: 0;
+	padding-left: 5px;
     font-size: 38px;
   }
 
@@ -262,7 +263,7 @@
 
   @media (max-width: 768px){
 		h1{
-			font-size: 29px;
+			font-size: 33px;
 		}	
 	
 	.main-container{
@@ -270,7 +271,6 @@
 	}
 	}
 
-	
 	
 </style>
 
